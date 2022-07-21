@@ -1,0 +1,84 @@
+﻿@model FullCRUD.Models.CrudModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>CrudModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WebsiteName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WebsiteName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HostingRenewalPrice)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HostingRenewalPrice)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HostingRenwalDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @ViewBag.HostingRenwalDate
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DomainRenewalPrice)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DomainRenewalPrice)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DomainRenewalDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @ViewBag.DomainRenewalDate
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AMCRenewalPrice)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AMCRenewalPrice)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AMCRenewalDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @ViewBag.AMCRenewalDate
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SEORenewalPrice)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SEORenewalPrice)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SEORenewalDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @ViewBag.SEORenewalDate
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PaymentMode)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PaymentMode)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Remark)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Remark)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    <a asp-action="ViewList" asp-controller="Crud">Back to List</a>
+</div>

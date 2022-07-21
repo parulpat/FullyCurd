@@ -1,0 +1,114 @@
+﻿@model IEnumerable<FullCRUD.Models.CrudModel>
+
+@{
+    ViewData["Title"] = "ViewList";
+}
+
+<h1>ViewList</h1>
+
+<p>
+    <a asp-action="CreateCrud">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WebsiteName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HostingRenewalPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HostingRenwalDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DomainRenewalPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DomainRenewalDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AMCRenewalPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AMCRenewalDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SEORenewalPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SEORenewalDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentMode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Remark)
+            </th>
+            <th>
+                @Html.DisplayName("Action")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.WebsiteName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HostingRenewalPrice)
+            </td>
+            <td>
+              @if (item.HostingRenwalDate!=null)
+              {
+                  string HostingRenwalDate = Convert.ToDateTime(item.HostingRenwalDate).ToString("dd/MM/yyyy");
+                  <span>@HostingRenwalDate</span>
+              }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DomainRenewalPrice)
+            </td>
+            <td>
+                @if (item.DomainRenewalDate != null)
+                {
+                    string DomainRenewalDate = Convert.ToDateTime(item.DomainRenewalDate).ToString("dd/MM/yyyy");
+                    <span>@DomainRenewalDate</span>
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AMCRenewalPrice)
+            </td>
+            <td>
+                @if (item.AMCRenewalDate != null)
+                {
+                    string AMCRenewalDate = Convert.ToDateTime(item.AMCRenewalDate).ToString("dd/MM/yyyy");
+                    <span>@AMCRenewalDate</span>
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SEORenewalPrice)
+            </td>
+            <td>
+                @if (item.SEORenewalDate != null)
+                {
+                    string SEORenewalDate = Convert.ToDateTime(item.SEORenewalDate).ToString("dd/MM/yyyy");
+                    <span>@SEORenewalDate</span>
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentMode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Remark)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

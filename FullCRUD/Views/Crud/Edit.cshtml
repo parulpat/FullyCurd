@@ -1,0 +1,94 @@
+﻿@model FullCRUD.Models.CrudModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>CrudModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" asp-controller="Crud">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="WebsiteName" class="control-label"></label>
+                <input asp-for="WebsiteName" class="form-control" />
+                <span asp-validation-for="WebsiteName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HostingRenewalPrice" class="control-label"></label>
+                <input asp-for="HostingRenewalPrice" class="form-control" />
+                <span asp-validation-for="HostingRenewalPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HostingRenwalDate" class="control-label"></label>
+                <input asp-for="HostingRenwalDate" class="form-control" type="date"/>
+                <span asp-validation-for="HostingRenwalDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DomainRenewalPrice" class="control-label"></label>
+                <input asp-for="DomainRenewalPrice" class="form-control" />
+                <span asp-validation-for="DomainRenewalPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DomainRenewalDate" class="control-label"></label>
+                <input asp-for="DomainRenewalDate" class="form-control" type="date"/>
+                <span asp-validation-for="DomainRenewalDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AMCRenewalPrice" class="control-label"></label>
+                <input asp-for="AMCRenewalPrice" class="form-control" />
+                <span asp-validation-for="AMCRenewalPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AMCRenewalDate" class="control-label"></label>
+                <input asp-for="AMCRenewalDate" class="form-control" type="date" />
+                <span asp-validation-for="AMCRenewalDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SEORenewalPrice" class="control-label"></label>
+                <input asp-for="SEORenewalPrice" class="form-control" />
+                <span asp-validation-for="SEORenewalPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SEORenewalDate" class="control-label"></label>
+                <input asp-for="SEORenewalDate" class="form-control" type="date"/>
+                <span asp-validation-for="SEORenewalDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaymentMode" class="control-label"></label>
+                <input asp-for="PaymentMode" class="form-control" />
+                <span asp-validation-for="PaymentMode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark" class="control-label"></label>
+                <input asp-for="Remark" class="form-control" />
+                <span asp-validation-for="Remark" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="ViewList" asp-controller="Crud">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+}
+<script src="~/js/JavaQ.min.js"></script>
+<script src="~/js/moment.min.js"></script>
+<script>
+    ////$(document).ready(function () {
+    ////    var HostingRenwalDate = moment((($("#HostingRenwalDate").val()).split("T")[0])).format('DD-MM-yyyy');
+    ////    $("#HostingRenwalDate").val(HostingRenwalDate);
+    ////    alert(HostingRenwalDate);
+    ////});
+</script>

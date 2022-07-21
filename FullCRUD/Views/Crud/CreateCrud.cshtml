@@ -1,0 +1,97 @@
+﻿@model FullCRUD.Models.CrudModel
+
+@{
+    ViewData["Title"] = "CreateCrud";
+}
+
+<h1>CreateCrud</h1>
+
+<h4>CrudModel</h4>
+<hr />
+<div class="row">
+    <div class="col-lg-12">
+        <form asp-action="CreateCrudPost" asp-controller="Crud">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group row">
+                <div class="col-lg-6">
+                    <label asp-for="WebsiteName" class="control-label"></label>
+                    <input asp-for="WebsiteName" class="form-control" />
+                    <span asp-validation-for="WebsiteName" class="text-danger"></span>
+                </div>
+                <div class="col-lg-6">
+                    <label asp-for="HostingRenewalPrice" class="control-label"></label>
+                    <input asp-for="HostingRenewalPrice" class="form-control" />
+                    <span asp-validation-for="HostingRenewalPrice" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-lg-6">
+                    <label asp-for="HostingRenwalDate" class="control-label"></label>
+                    <input asp-for="HostingRenwalDate" class="form-control" />
+                    <span asp-validation-for="HostingRenwalDate" class="text-danger"></span>
+                </div>
+                <div class="col-lg-6">
+                    <label asp-for="DomainRenewalPrice" class="control-label"></label>
+                    <input asp-for="DomainRenewalPrice" class="form-control" />
+                    <span asp-validation-for="DomainRenewalPrice" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-lg-6">
+                    <label asp-for="DomainRenewalDate" class="control-label"></label>
+                    <input asp-for="DomainRenewalDate" class="form-control" />
+                    <span asp-validation-for="DomainRenewalDate" class="text-danger"></span>
+                </div>
+                <div class="col-lg-6">
+                    <label asp-for="AMCRenewalPrice" class="control-label"></label>
+                    <input asp-for="AMCRenewalPrice" class="form-control" />
+                    <span asp-validation-for="AMCRenewalPrice" class="text-danger"></span>
+                </div>
+                
+            </div>
+            <div class="form-group row">
+                <div class="col-lg-6">
+                    <label asp-for="AMCRenewalDate" class="control-label"></label>
+                    <input asp-for="AMCRenewalDate" class="form-control" />
+                    <span asp-validation-for="AMCRenewalDate" class="text-danger"></span>
+                </div>
+                <div class="col-lg-6">
+                    <label asp-for="SEORenewalPrice" class="control-label"></label>
+                    <input asp-for="SEORenewalPrice" class="form-control" />
+                    <span asp-validation-for="SEORenewalPrice" class="text-danger"></span>
+                </div>
+                
+            </div>
+            <div class="form-group row">
+                <div class="col-lg-6">
+                    <label asp-for="SEORenewalDate" class="control-label"></label>
+                    <input asp-for="SEORenewalDate" class="form-control" />
+                    <span asp-validation-for="SEORenewalDate" class="text-danger"></span>
+                </div>
+                <div class="col-lg-6">
+                    <label asp-for="PaymentMode" class="control-label"></label>
+                    <input asp-for="PaymentMode" class="form-control" />
+                    <span asp-validation-for="PaymentMode" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-lg-12">
+                    <label asp-for="Remark" class="control-label"></label>
+                    <input asp-for="Remark" class="form-control" />
+                    <span asp-validation-for="Remark" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="ViewList" asp-controller="Crud">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
